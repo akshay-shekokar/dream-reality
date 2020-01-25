@@ -9,7 +9,7 @@ import {
     Segment,
     Sidebar
 } from 'semantic-ui-react';
-import { HomePageHeading } from "../components";
+import { HomePageHeading, Footer } from "../components";
 import { getWidth } from "../utils/style-utils";
 
 class MobileContainer extends Component {
@@ -73,6 +73,7 @@ class MobileContainer extends Component {
                     </Segment>
 
                     {children}
+                    <Footer />
                 </Sidebar.Pusher>
             </Responsive>
         )

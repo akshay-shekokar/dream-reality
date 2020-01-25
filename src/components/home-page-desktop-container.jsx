@@ -9,7 +9,7 @@ import {
     Grid
 } from 'semantic-ui-react';
 import styled from "styled-components";
-import { HomePageHeading, CityDropdown, TextLogo } from "../components";
+import { HomePageHeading, CityDropdown, TextLogo, Footer } from "../components";
 import DesktopBackgroundImg from "../static/img/desktop_bg.jpg";
 import { getWidth } from "../utils/style-utils";
 
@@ -52,12 +52,12 @@ class DesktopContainer extends Component {
                 >
                     <Segment
                         textAlign='center'
-                        style={{ 
-                            minHeight: 550, 
-                            padding: '1em 0em', 
-                            backgroundImage: `url(${DesktopBackgroundImg})`, 
+                        style={{
+                            minHeight: 550,
+                            padding: '1em 0em',
+                            backgroundImage: `url(${DesktopBackgroundImg})`,
                             backgroundSize: "cover",
-                            boxShadow:"inset 0 0 0 2000px rgba(0, 0, 0, 0.5)"
+                            boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.5)"
                         }}
                         vertical
                     >
@@ -105,8 +105,10 @@ class DesktopContainer extends Component {
                         <HomePageHeading />
                     </Segment>
                 </Visibility>
-
-                {children}
+                <Segment vertical style={{ padding: "5rem 10rem" }}>
+                    {children}
+                </Segment>
+                <Footer />
             </Responsive>
         )
     }

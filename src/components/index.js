@@ -4,6 +4,7 @@ import HomePageMobileContainer from "./home-page-mobile-container";
 import CityDropdown from "./city-dropdown";
 import TextLogo from "./text-logo";
 import HomePageSearch from "./home-page-search";
+import Footer from "./footer";
 
 export {
     HomePageHeading,
@@ -11,5 +12,6 @@ export {
     HomePageMobileContainer,
     CityDropdown,
     TextLogo,
-    HomePageSearch
+    HomePageSearch,
+    Footer
 };
