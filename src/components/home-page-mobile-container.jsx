@@ -7,10 +7,13 @@ import {
     Menu,
     Responsive,
     Segment,
+    Image,
     Sidebar
 } from 'semantic-ui-react';
-import { HomePageHeading, Footer } from "../components";
+import { HomePageHeading, TextLogo, Footer, CityDropdown } from "../components";
 import { getWidth } from "../utils/style-utils";
+import MobileBackgroundImg from "../static/img/mobile_bg.jpg";
+import MobileSideBarImg from "../static/img/mobile-sidebar.jpg";
 
 class MobileContainer extends Component {
     state = {}
@@ -32,47 +35,58 @@ class MobileContainer extends Component {
                 <Sidebar
                     as={Menu}
                     animation='push'
-                    inverted
                     onHide={this.handleSidebarHide}
                     vertical
                     visible={sidebarOpened}
                 >
-                    <Menu.Item as='a' active>
-                        Home
-            </Menu.Item>
-                    <Menu.Item as='a'>Work</Menu.Item>
-                    <Menu.Item as='a'>Company</Menu.Item>
-                    <Menu.Item as='a'>Careers</Menu.Item>
-                    <Menu.Item as='a'>Log in</Menu.Item>
-                    <Menu.Item as='a'>Sign Up</Menu.Item>
+                    <Menu.Item as="div" style={{ backgroundImage: `url(${MobileSideBarImg})`, height: "150px", display: "flex", alignItems: "flex-end", color: "white" }}>
+                        My Dream
+                    </Menu.Item>
+                    <Menu.Item as="div">
+                        City: <CityDropdown />
+                    </Menu.Item>
+                    <Menu.Item as='a' active>Home</Menu.Item>
+                    <Menu.Item as='a'>Vendors</Menu.Item>
+                    <Menu.Item as='a'>Wedding Stories</Menu.Item>
+                    <Menu.Item as='a'>Photos</Menu.Item>
+                    <Menu.Item as='a'>Offers/Deals</Menu.Item>
+                    <Menu.Item as='a' style={{color: "red"}}>List Your Business</Menu.Item>
                 </Sidebar>
 
                 <Sidebar.Pusher dimmed={sidebarOpened}>
                     <Segment
                         inverted
                         textAlign='center'
-                        style={{ minHeight: 350, padding: '1em 0em' }}
+                        vertical
+                        style={{
+                            minHeight: "280px", padding: '1em 0em',
+                            backgroundImage: `url(${MobileBackgroundImg})`,
+                            backgroundSize: "cover",
+                            boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.5)"
+                        }}
+
                         vertical
                     >
                         <Container>
-                            <Menu inverted pointing secondary size='large'>
-                                <Menu.Item onClick={this.handleToggle}>
+                            <Menu inverted pointing secondary size='large' fixed="top">
+                                <Menu.Item onClick={this.handleToggle} style={{ margin: "1px" }}>
                                     <Icon name='sidebar' />
                                 </Menu.Item>
+                                <Menu.Item>
+                                    <TextLogo />
+                                </Menu.Item>
                                 <Menu.Item position='right'>
-                                    <Button as='a' inverted>
-                                        Log in
-                    </Button>
-                                    <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                                        Sign Up
-                    </Button>
+                                    <Button inverted>
+                                        Log In/Sign Up
+                                    </Button>
                                 </Menu.Item>
                             </Menu>
                         </Container>
                         <HomePageHeading mobile />
                     </Segment>
-
-                    {children}
+                    <Segment vertical style={{ padding: "3rem 0" }}>
+                        {children}
+                    </Segment>
                     <Footer />
                 </Sidebar.Pusher>
             </Responsive>

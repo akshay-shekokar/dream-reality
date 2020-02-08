@@ -20,10 +20,10 @@ const HomePageHeading = ({ mobile }) => (
             content='We bring your Dream into Reality'
             inverted
             style={{
-                fontSize: mobile ? '2em' : '2.5em',
+                fontSize: mobile ? '1.5em' : '2.5em',
                 fontWeight: 'normal',
                 marginBottom: 0,
-                marginTop: mobile ? '1.5em' : '3em',
+                marginTop: "5rem",
             }}
         />
         <br />
